@@ -58,29 +58,51 @@
         transform: scale(1.05);
     }
 
-    /* Estilo para el recuadro de aviso cuando no hay perfil */
+    .layout-sin-menu #sidebar, 
+    .layout-sin-menu .sidebar, 
+    .layout-sin-menu #btnMobileMenu {
+        display: none !important;
+    }
+
+    .layout-sin-menu .main-content {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    .layout-sin-menu .footer {
+        left: 0 !important;
+        width: 100% !important;
+    }
+
+    /* Estilos de la tarjeta de aviso */
+    .no-profile-container {
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
     .no-profile-card {
-        background: #ffffff;
-        border-radius: 24px;
-        border-left: 8px solid #81d8d0; /* Color Tiffany */
-        box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(10px);
+        border-radius: 20px;
         padding: 3rem;
-        max-width: 600px;
-        margin: 100px auto; /* Centrado vertical aproximado */
+        box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+        max-width: 500px;
+        border: 1px solid rgba(129, 216, 208, 0.3);
     }
 
     .btn-admin-direct {
         background-color: #81d8d0;
-        color: #1a202c;
-        font-weight: bold;
-        border: none;
-        padding: 12px 30px;
+        color: white;
+        padding: 12px 25px;
         border-radius: 50px;
-        transition: all 0.3s ease;
         text-decoration: none;
+        font-weight: bold;
         display: inline-block;
+        transition: all 0.3s ease;
     }
-
+    
     .btn-admin-direct:hover {
         background-color: #6bc4bc;
         transform: translateY(-2px);
