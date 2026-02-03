@@ -59,11 +59,17 @@ def get_perfil_activo():
     return perfil
 
 def get_configuracion(perfil):
+    if perfil is None:
+        return None
+    
     config, created = ConfiguracionSecciones.objects.get_or_create(perfil=perfil)
     return config
 
 def perfil_profesional(request):
     perfil = get_perfil_activo()
+    if not perfil:
+        return render(request, 'curriculum/perfil_profesional.html', {'perfil': None})
+    
     config = get_configuracion(perfil)
     
     experiencias = ExperienciaLaboral.objects.filter(activarparaqueseveaenfront=True).order_by('-fechainiciogestion')
